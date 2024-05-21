@@ -61,7 +61,9 @@ public class Clase16 {
         int max = numerosDuplicados.stream().reduce(1,Integer::max);
         System.out.println(max);
         int min = numerosDuplicados.stream().reduce(1000,Integer::min);
-        System.out.println(min);*/
+        System.out.println(min);
+
+
 
         List<Integer> numerillos = Arrays.asList(1,9,2,10,2,4,7,4,7,1,4);
          int sumatoria = numerillos
@@ -97,7 +99,55 @@ public class Clase16 {
                 .stream()
                 .filter(n ->n<5)
                 .count();
-        System.out.println(cuentaMenores5);
+        System.out.println(cuentaMenores5);*/
+
+        List<String> nombres = Arrays.asList("Anastasia","Beatriz","Clara","Carla","Marianela","Paula","Pia");
+
+         nombres
+                .stream()
+                .filter(n->n.length()>5)
+                 .collect(Collectors.toList())
+                 .forEach(System.out::println);
+
+        nombres
+                .stream()
+                .map(n -> n.toLowerCase())
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+        nombres
+                .stream()
+                .filter(n->n.startsWith("P"))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+        List<String> aBC = new ArrayList<>();
+
+        nombres
+                .stream()
+                .filter(n->n.startsWith("A"))
+                .collect(Collectors.toList())
+                .forEach(aBC::add);
+        nombres
+                .stream()
+                .filter(n->n.startsWith("B"))
+                .collect(Collectors.toList())
+                .forEach(aBC::add);
+        nombres
+                .stream()
+                .filter(n->n.startsWith("C"))
+                .collect(Collectors.toList())
+                .forEach(aBC::add);
+
+        System.out.println(aBC);
+        System.out.println(aBC.stream().count());
+
+        List<Integer> letrasCadaNombre= new ArrayList<>();
+
+        nombres.stream().map(n ->n.length()).forEach(letrasCadaNombre::add);
+        System.out.println(letrasCadaNombre);
+
+
 
 
     }

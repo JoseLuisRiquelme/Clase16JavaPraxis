@@ -103,23 +103,30 @@ public class Clase16 {
 
         List<String> nombres = Arrays.asList("Anastasia","Beatriz","Clara","Carla","Marianela","Paula","Pia");
 
+        // more than 5 characters
+
          nombres
                 .stream()
                 .filter(n->n.length()>5)
                  .collect(Collectors.toList())
                  .forEach(System.out::println);
 
+        // All names to Lowercase
         nombres
                 .stream()
                 .map(n -> n.toLowerCase())
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
+        //Names starts with "P"
+
         nombres
                 .stream()
                 .filter(n->n.startsWith("P"))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+
+        //Counting names starts with "A" or "B" or "C"
 
         List<String> aBC = new ArrayList<>();
 
@@ -141,6 +148,8 @@ public class Clase16 {
 
         System.out.println(aBC);
         System.out.println(aBC.stream().count());
+
+        //ArrayList with the numbers of characters of each name
 
         List<Integer> letrasCadaNombre= new ArrayList<>();
 
